@@ -1,172 +1,734 @@
-<!DOCTYPE html>
-<html lang="en" >
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Mega menu</title>
-  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
-  
-      <link rel="stylesheet" href="css/style.css">
-
-  
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Untitled Document</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <!--Slide product--->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-
-  <nav>
-      <div class="container">
-        <ul class="menu-main">
-
-<li><a href="">Trang chủ</a>
-          <li><a href="">Điện thoại</a>
-            <div class="menu-sub">
-              
-              <div class="menu-col-1a">
-                <h3 class="menu-category">Category</h3>
-                <ul>
-                  <li><a href="">Link 01</a></li>
-                  <li><a href="">Link 02</a></li>
-                  <li><a href="">Link 03</a></li>
-                  <li><a href="">Link 04</a></li>
-                  <li><a href="">Link 05</a></li>
-                   <li><a href="">Link 01</a></li>
-                  <li><a href="">Link 02</a></li>
-                  <li><a href="">Link 03</a></li>
-                  <li><a href="">Link 04</a></li>
-                  <li><a href="">Link 05</a></li>
-                  <li><a href="">Link 01</a></li>
-                  <li><a href="">Link 02</a></li>
-                  <li><a href="">Link 03</a></li>
-                  <li><a href="">Link 04</a></li>
-                  <li><a href="">Link 05</a></li>
-                   <li><a href="">Link 01</a></li>
-                  <li><a href="">Link 02</a></li>
-                  <li><a href="">Link 03</a></li>
-                  <li><a href="">Link 04</a></li>
-                  <li><a href="">Link 05</a></li>
-                </ul>
-
-                
-              </div>
-
-              <div class="menu-col-1">
-                <h3 class="menu-category">Category</h3>
-                <ul>
-                  <li><a href="">Link 01</a></li>
-                  <li><a href="">Link 02</a></li>
-                  <li><a href="">Link 03</a></li>
-                  <li><a href="">Link 04</a></li>
-                  <li><a href="">Link 05</a></li>
-                </ul>
-
-                
-              </div>
-
-              <div class="menu-col-1">
-                <h3 class="menu-category">Category</h3>
-                <ul>
-                  <li><a href="">Link 01</a></li>
-                  <li><a href="">Link 02</a></li>
-                  <li><a href="">Link 03</a></li>
-                  <li><a href="">Link 04</a></li>
-                  <li><a href="">Link 05</a></li>
-                </ul>
-
-               
-              </div>
-
-              <div class="menu-col-1">
-                <h3 class="menu-category">Category</h3>
-                <ul>
-                  <li><a href="">Link 01</a></li>
-                  <li><a href="">Link 02</a></li>
-                  <li><a href="">Link 03</a></li>
-                  <li><a href="">Link 04</a></li>
-                  <li><a href="">Link 05</a></li>
-                </ul>
-
-                
-              </div>
+    <div class="main">
+        <!----------START HEADER------------->
+        <div class="header">
+            <div class="f-header">
+                <div class="f-logo">
+                   <a href=""><img src="image/logo.svg" alt="" /><span>Store.com.vn</span></a>
+                </div><!-- end div logo-->
+                <div class="f-search">
+                    <form action="" method="get">
+                        <input class="text-search" type="text" placeholder="Nhập tên điện thoại laptop, phụ kiện,... cần tìm" />
+                        <button style="height:38px; width:40px" class="button-search" type="submit">
+                            <!--<i class="icon-search"></i>-->
+                            <i class="fas fa-search "></i>
+                        </button>
+                    </form>
+                </div>
+                <!--End div search-->
+                <div class="f-menu">
+                    <ul>
+                        <li>
+                            <a href="#" title="Điện thoại trợ giá" >
+                           <!-- <i class="icon-dttrogia"></i>-->
+                          <!-- <img src="image/icon/icon_trogia.gif" alt="Not found resource" srcset="" />-->
+                              <i class="fas fa-mobile-alt fa-stack-3x"></i>
+                               <span> Điện thoại trợ giá</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="Khuyến mãi" >
+                           <!-- <i class="icon-dttrogia"></i>-->
+                              <i class="fas fa-gift"></i>
+                               <span> Khuyến mãi</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="Hỏi đáp" >
+                           <!-- <i class="icon-dttrogia"></i>-->
+                              <i class="far fa-question-circle"></i>
+                               <span> Hỏi đáp</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="Giỏ hàng của bạn" >
+                           <!-- <i class="icon-dttrogia"></i>-->
+                          <i class="fas fa-shopping-cart "></i>
+                              <!--<img src="image/icon/icon_trogia.gif" alt="Not found resource" srcset="" /> -->
+                               <span> Giỏ hàng</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!---------------END F-MENU----------------->
+                </div>
+                <!-------------END-F-HEADER------------->
             </div>
-          </li>
 
-          <li><a href="">Tab 02</a>
-            <div class="menu-sub">
-              <div class="menu-col-2">
-                <h3 class="menu-category">Category</h3>
-                <ul>
-                  <li><a href="">Link 01</a></li>
-                  <li><a href="">Link 02</a></li>
-                  <li><a href="">Link 03</a></li>
-                  <li><a href="">Link 04</a></li>
-                  <li><a href="">Link 05</a></li>
-                </ul>
-
-                <h3 class="menu-category">Category</h3>
-                <ul>
-                  <li><a href="">Link 01</a></li>
-                  <li><a href="">Link 02</a></li>
-                </ul>
-
-                <h3 class="menu-category">Category</h3>
-                <ul>
-                  <li><a href="">Link 01</a></li>
-                  <li><a href="">Link 02</a></li>
-                </ul>
+            <nav>
+                <div class="m-container">
+                    <ul class="menu-main">
+                        <li>
+                            <a href="">
+                          <i class="fas fa-gift"></i><span>Trang chủ</span>
+                        </a>
+                        <li><a href="">
+                          <i class="fas fa-gift"></i><span>Điện thoại</span>
+                        </a>
+                            <div class="menu-sub">
+                                <div class="menu-col-1a">
+                                    <h3 class="menu-category">Hãng sản xuất</h3>
+                                    <ul>
+                                        <li><a href="">Apple</a></li>
+                                        <li><a href="">Samsung</a></li>
+                                        <li><a href="">Oppo</a></li>
+                                        <li><a href="">Huawei</a></li>
+                                        <li><a href="">Xiaomi</a></li>
+                                        <li><a href="">Vivo</a></li>
+                                        <li><a href="">Nokia</a></li>
+                                        <li><a href="">Asus</a></li>
+                                        <li><a href="">Masstel</a></li>
+                                        <li><a href="">Meizu</a></li>
+                                        <li><a href="">Mobiistar</a></li>
+                                        <li><a href="">Philips</a></li>
+                                        <li><a href="">Wiko</a></li>
+                                        <li><a href="">Intel</a></li>
+                                        <li><a href="">Tecno</a></li>
+                                        <li><a href="">Sony</a></li>
+                                        <li><a href="">Honor</a></li>
+                                        <li><a href="">Realme</a></li>
+                                    </ul>
+                                </div>
+                                <div class="menu-col-1">
+                                    <h3 class="menu-category">Mức giá</h3>
+                                    <ul>
+                                        <li><a href="">Dưới 1 triệu</a></li>
+                                        <li><a href="">Từ 1 - 3 triệu</a></li>
+                                        <li><a href="">Từ 3 - 6 triệu</a></li>
+                                        <li><a href="">Từ 6 - 10 triệu</a></li>
+                                        <li><a href="">Từ 10 - 15 triệu</a></li>
+                                        <li><a href="">Trên 15 triệu</a></li>
+                                    </ul>
+                                </div>
+                                <div class="menu-col-1">
+                                    <h3 class="menu-category">Điện thoại bán chạy nhất</h3>
+                                    <ul class="menu-bxh">
+                                        <li class="clearfix">
+                                            <a href="" class="menu-col-img"><img src="https://ss7.vzw.com/is/image/VerizonWireless/iPhoneX-Svr?$device-lg$" alt=""></a>
+                                            <div class="bxh-price">
+                                                <a href="#"><span>Oppo F9</span></a>
+                                                <p>7.699.000đ</p>
+                                            </div>
+                                        </li>
+                                        <div class="m-clean"></div>
+                                        <li class=" clearfix">
+                                            <a href="" class="menu-col-img"><img src="https://ss7.vzw.com/is/image/VerizonWireless/iPhoneX-Svr?$device-lg$" alt=""></a>
+                                            <div class="bxh-price22">
+                                                <a href="#"><span>Oppo Neo9</span></a>
+                                                <p>7.699.000đ</p>
+                                            </div>
+                                        </li>
+                                    </ul>s
+                                </div>
+                                <div class="menu-col-1">
+                                    <img src="image/636741614288912853_Banner 248x248.jpg" alt="" style="width: 100%; height:210px">
               </div>
-
-              <div class="menu-col-1">
-                <h3 class="menu-category">Category</h3>
-                <ul>
-                  <li><a href="">Link 01</a></li>
-                  <li><a href="">Link 02</a></li>
-                  <li><a href="">Link 03</a></li>
-                  <li><a href="">Link 04</a></li>
-                  <li><a href="">Link 05</a></li>
-                </ul>
-
-                <h3 class="menu-category">Category</h3>
-                <ul>
-                  <li><a href="">Link 01</a></li>
-                  <li><a href="">Link 02</a></li>
-                  <li><a href="">Link 03</a></li>
-                  <li><a href="">Link 04</a></li>
-                  <li><a href="">Link 05</a></li>
-                </ul>
+                                </div>
+                        </li>
+                        <li><a href="">
+                          <i class="fas fa-gift"></i><span>Tablet</span>
+                        </a>
+                            <div class="menu-sub">
+                                <div class="menu-col-1a">
+                                    <h3 class="menu-category">Hãng sản xuất</h3>
+                                    <ul>
+                                        <li><a href="">Apple (Ipad)</a></li>
+                                        <li><a href="">Samsung</a></li>
+                                        <li><a href="">lelnovo</a></li>
+                                        <li><a href="">Huawei</a></li>
+                                        <li><a href="">Masstel</a></li>
+                                        <li><a href="">Itel</a></li>
+                                    </ul>
+                                </div>
+                                <div class="menu-col-1">
+                                    <h3 class="menu-category">Mức giá</h3>
+                                    <ul>
+                                        <li><a href="">Dưới 1 triệu</a></li>
+                                        <li><a href="">Từ 1 - 3 triệu</a></li>
+                                        <li><a href="">Từ 3 - 6 triệu</a></li>
+                                        <li><a href="">Trên 15 triệu</a></li>
+                                    </ul>
+                                </div>
+                                <div class="menu-col-1">
+                                    <h3 class="menu-category">Điện thoại bán chạy nhất</h3>
+                                    <ul class="menu-bxh">
+                                        <li class="clearfix">
+                                            <a href="" class="menu-col-img"><img src="https://ss7.vzw.com/is/image/VerizonWireless/iPhoneX-Svr?$device-lg$" alt=""></a>
+                                            <div class="bxh-price">
+                                                <a href="#"><span>Oppo F9</span></a>
+                                                <p>7.699.000đ</p>
+                                            </div>
+                                        </li>
+                                        <div class="m-clean"></div>
+                                        <li class=" clearfix">
+                                            <a href="" class="menu-col-img"><img src="https://ss7.vzw.com/is/image/VerizonWireless/iPhoneX-Svr?$device-lg$" alt=""></a>
+                                            <div class="bxh-price22">
+                                                <a href="#"><span>Oppo Neo9</span></a>
+                                                <p>7.699.000đ</p>
+                                            </div>
+                                        </li>
+                                    </ul>s
+                                </div>
+                                <div class="menu-col-1">
+                                    <img src="image/636722577484242035_636669934945963395_H4.png.jpeg" alt="" style="width: 100%; height:210px">
               </div>
-
-              <div class="menu-col-1">
-                <h3 class="menu-category">Category</h3>
-                <ul>
-                  <li><a href="">Link 01</a></li>
-                  <li><a href="">Link 02</a></li>
-                  <li><a href="">Link 03</a></li>
-                  <li><a href="">Link 04</a></li>
-                  <li><a href="">Link 05</a></li>
-                </ul>
-
-                <h3 class="menu-category">Category</h3>
-                <ul>
-                  <li><a href="">Link 01</a></li>
-                  <li><a href="">Link 02</a></li>
-                  <li><a href="">Link 03</a></li>
-                  <li><a href="">Link 04</a></li>
-                  <li><a href="">Link 05</a></li>
-                </ul>
+                                </div>
+                        </li>
+                        </li>
+                        <li><a href="">
+                          <i class="fas fa-gift"></i><span>Laptop</span>
+                        </a>
+                            <div class="menu-sub">
+                                <div class="menu-col-1a">
+                                    <h3 class="menu-category">Hãng sản xuất</h3>
+                                    <ul>
+                                        <li><a href="">Apple (Macbook)</a></li>
+                                        <li><a href="">Asus</a></li>
+                                        <li><a href="">Acer</a></li>
+                                        <li><a href="">Dell</a></li>
+                                        <li><a href="">HP</a></li>
+                                        <li><a href="">Lenovo</a></li>
+                                        <li><a href="">MSI</a></li>
+                                        <li><a href="">Masstel</a></li>
+                                        <li><a href="">Haler</a></li>
+                                    </ul>
+                                </div>
+                                <div class="menu-col-1">
+                                    <h3 class="menu-category">Mức giá</h3>
+                                    <ul>
+                                        <li><a href="">Dưới 5 triệu</a></li>
+                                        <li><a href="">Từ 5 - 10 triệu</a></li>
+                                        <li><a href="">Từ 10 - 15 triệu</a></li>
+                                        <li><a href="">Từ 15 - 20 triệu</a></li>
+                                        <li><a href="">Từ 20 - 25 triệu</a></li>
+                                        <li><a href="">Từ 25 - 30 triệu</a></li>
+                                        <li><a href="">Trên 30 triệu</a></li>
+                                    </ul>
+                                </div>
+                                <div class="menu-col-1">
+                                    <h3 class="menu-category">Điện thoại bán chạy nhất</h3>
+                                    <ul class="menu-bxh">
+                                        <li class="clearfix">
+                                            <a href="" class="menu-col-img"><img src="https://ss7.vzw.com/is/image/VerizonWireless/iPhoneX-Svr?$device-lg$" alt=""></a>
+                                            <div class="bxh-price">
+                                                <a href="#"><span>Oppo F9</span></a>
+                                                <p>7.699.000đ</p>
+                                            </div>
+                                        </li>
+                                        <div class="m-clean"></div>
+                                        <li class=" clearfix">
+                                            <a href="" class="menu-col-img"><img src="https://ss7.vzw.com/is/image/VerizonWireless/iPhoneX-Svr?$device-lg$" alt=""></a>
+                                            <div class="bxh-price22">
+                                                <a href="#"><span>Oppo Neo9</span></a>
+                                                <p>7.699.000đ</p>
+                                            </div>
+                                        </li>
+                                    </ul>s
+                                </div>
+                                <div class="menu-col-1">
+                                    <img src="image/636659578548694071_H4-Section 1.png" alt="" style="width: 100%; height:210px">
               </div>
+                                </div>
+                        <li><a href="">
+                          <i class="fas fa-gift"></i><span>Phụ kiện</span>
+                        </a>
+                            <div class="menu-sub">
+                                <div class="menu-col-2a">
+                                    <h3 class="menu-category">CÁC SẢN PHẨM PHỤ KIỆN</h3>
+                                    <ul>
+                                        <li><a href="">Bao da ốp lưng</a></li>
+                                        <li><a href="">Sạc dự phòng</a></li>
+                                        <li><a href="">Thẻ nhớ</a></li>
+                                        <li><a href="">Phụ kiện Apple</a></li>
+                                        <li><a href="">Miếng dán màn hình</a></li>
+                                        <li><a href="">Tai nghe</a></li>
+                                        <li><a href="">Loa</a></li>
+                                        <li><a href="">USB - Ổ cứng</a></li>
+                                        <li><a href="">Sạc cáp</a></li>
+                                        <li><a href="">Chuột</a></li>
+                                        <li><a href="">Balo - Túi xách</a></li>
+                                        <li><a href="">TV BOX</a></li>
+                                        <li><a href="">Phụ kiện khác</a></li>
+                                        <li><a href="">Máy chơi game</a></li>
+                                    </ul>
+                                </div>
+                                <div class="menu-col-2">
+                                    <h3 class="menu-category">Điện thoại bán chạy nhất</h3>
+                                    <ul class="menu-bxh">
+                                        <li class="clearfix">
+                                            <a href="" class="menu-col-img"><img src="https://ss7.vzw.com/is/image/VerizonWireless/iPhoneX-Svr?$device-lg$" alt=""></a>
+                                            <div class="bxh-price">
+                                                <a href="#"><span>Oppo F9</span></a>
+                                                <p>7.699.000đ</p>
+                                            </div>
+                                        </li>
+                                        <div class="m-clean"></div>
+                                        <li class=" clearfix">
+                                            <a href="" class="menu-col-img"><img src="https://ss7.vzw.com/is/image/VerizonWireless/iPhoneX-Svr?$device-lg$" alt=""></a>
+                                            <div class="bxh-price22">
+                                                <a href="#"><span>Oppo Neo9</span></a>
+                                                <p>7.699.000đ</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="menu-col-2">
+                                    <img src="image/636713668479090000_KM-Phu-Kien-248x248.png" alt="" style="width: 100%; height: 210px">
+                                </div>
+                                </div>
+                        </li>
+                        <li><a href="">
+                          <i class="fas fa-gift"></i><span>Máy đổi trả</span>
+                        </a>
+                        </li>
+                        <li><a href="">
+                          <i class="fas fa-gift"></i><span>Sim & thẻ cào</span>
+                        </a>
+                        <li><a href="">
+                          <i class="fas fa-gift"></i><span>Trả góp 0%</span>
+                        </a>
+                    </ul>
+                </div>
+            </nav>
+
+
+
+            <!--<div><hr style="border:1px solid #000; display:block; "/></div>-->
+            <!-------------START MENU--------------->
+           <!-- <nav class="menu">
+                <div class="wrap-menu">
+                    <ul>
+                        <li>
+                            <a href="#" title="Trang chủ" >
+                              <i class="fas fa-home"></i>
+                               <span>Trang chủ</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="Điện thoại" >
+                              <i class="fas fa-mobile"></i>
+                               <span>Điện thoại</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="Laptop" >
+                              <i class="fas fa-laptop"></i>
+                                <span>Laptop</span> 
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="Tablet" >
+                            <i class="fas fa-tablet"></i>
+                               <span>Tablet</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="Phụ Kiện" >
+                              <i class="fas fa-headphones-alt"></i>
+                               <span>Phụ Kiện</span> 
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="Máy đổi trả" >
+                              <i class="fas fa-gift"></i>
+                               <span>Máy đổi trả</span> 
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="Sim & Thẻ cào" >
+                            <i class="fas fa-id-card"></i>
+                              <span>Sim & Thẻ cào</span> 
+                            </a>
+                        </li>
+                    </ul>
+                </div><!-- end div wrap-menu-->
+                <!-------------END MENU----------------->
+            
+            <!-------------END HEADER--------------->
+        </div>
+        <!-------------START CONTENT--------------->
+        <div class="content">
+            <div class="c-wrap">
+                <div class="ads">
+                    <a href="#"><img src="image/advertise/ads_big.gif" alt="" /></a>
+                </div><!-- end div ads-->
+                <div class="c-banner">
+                    <!--
+              <div class="sliderImg">-->
+                    <!------------------------->
+                    <!--
+<div class="slider-holder">
+        <span id="slider-image-1"></span>
+        <span id="slider-image-2"></span>
+        <span id="slider-image-3"></span>
+        <div class="image-holder">
+            <img src="image/slider/636717413604561735_Section1-H1_800x300.jpg" class="slider-image" />
+            <img src="image/slider/636739540756494153_F-H1_800x300.jpg" class="slider-image" />
+            <img src="image/slider/636753089265740085_Banner Galaxy A7 800x300.jpg" class="slider-image" />
+        </div>
+        <div class="button-holder">
+            <a href="#slider-image-1" class="slider-change"></a>
+            <a href="#slider-image-2" class="slider-change"></a>
+            <a href="#slider-image-3" class="slider-change"></a>
+        </div>
+    </div>-->
+                    <!-------------------------->
+                    <!--<img src="image/636757975632455672_H1 (9).png">-->
+                    <!--</div><end div sliderImg-->
+                    <div class="slideshow">
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators" style="margin-bottom: -10px">
+                                <li data-target="#myCarousel" data-slide-to="0"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                <li data-target="#myCarousel" data-slide-to="2" class="active"></li>
+                                <li data-target="#myCarousel" data-slide-to="3"></li>
+                                <li data-target="#myCarousel" data-slide-to="4"></li>
+                            </ol>
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+                                <div class="item">
+                                    <a href="#" target="_blank">
+         <img src="image/slider/636739540756494153_F-H1_800x300.jpg" alt="Los Angeles" style="width:100%;height: 343px;">
+        <div class="carousel-caption">
+        </a>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="" target="_blank">
+          <img src="image/slider/636753089265740085_Banner Galaxy A7 800x300.jpg" alt="Chicago" style="width:100%;height: 343px;">
+          <div class="carousel-caption">
+        </a>
+                            </div>
+                        </div>
+                        <div class="item active">
+                            <a href="" target="_blank">
+          <img src="image/slider/636756302029984353_H1 iphone Xs - xam.png" alt="New York" style="width:100%;height: 343px;">
+          <div class="carousel-caption">
+         </a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <a href="" target="_blank">
+          <img src="image/slider/636717413604561735_Section1-H1_800x300.jpg" alt="Chicago" style="width:100%;height: 343px;">
+          <div class="carousel-caption">
+         </a>
+                    </div>
+                </div>
+                <div class="item">
+                    <a href="" target="_blank">
+          <img src="image/slider/636759062222415125_H1 (10).png" alt="New York" style="width:100%;height: 343px;">
+          <div class="carousel-caption">
+        </a>
+                    <!--<h3>New York</h3>
+          <p>We love the Big Apple!</p>-->
+                </div>
             </div>
-          </li>
-
-          <li><a href="">Tab 03</a></li>
-          <li><a href="">Tab 04</a></li>
-        </ul>
+        </div>
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev" >
+      <span class="glyphicon glyphicon-chevron-left" style="background: none"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" style="background: none"></span>
+      <span class="sr-only" >Next</span>
+    </a>
     </div>
-  </nav>
-  
-  
+    </div>
+    <div class="right-banner">
+        <div class="ads1">
+            <a href="https://fb.com" target="_blank"><img src="image/advertise/ads_small.png" alt="" style="width: 450px; height: 88px" /></a>
+        </div>
+        <div class="ads2">
+            <a href="https://google.com" target="_blank"><img src="image/advertise/ads_small_2.jpeg" alt="" style="width: 450px; height: 88px" /></a>
+        </div>
+        <div class="news">
+            <div class="n-title">
+                <h3>TIN CÔNG NGHỆ <a href="#" target="_blank">xem tất cả</a></h3>
+            </div>
+            <div class="line-news">
+                <ul>
+                    <li>
+                        <a href="" title="I phone  SX Max hiện đã có mặt tại Việt Nam">
+                        <img src="image/Images/Nen27.jpg" alt="" />
+                        <span>Trải nghiệm nhanh camera Mate 20 Pro: Zoom 10X ấn tượng, màu sắc chi tiết cực tốt</span>
+                      </a>
+                    </li>
+                    <li>
+                        <a href="#" title="Nhà cầm quyền công nghệ: Samsung SX thâu tóm tất cả điện thoại android">
+                        <img src="image/Images/Nen37.jpg">
+                        <span>Nhà cầm quyền công nghệ: Samsung SX thâu tóm tất cả điện thoại android</span>
+                      </a>
+                    </li>
+                </ul>
+            </div>
+            <!--end div line-news-->
+        </div>
+        <!--end div news-->
+    </div>
+    <!--end div right-banner-->
+    </div><!-- end div c-banner-->
+    <div class="clean" style="clear: both;">
+        <hr width="auto" style="margin-top: -20px; display: none;" />
+    </div>
+    <!--clean-->
+    <div class="produce">
+        <h2>Điện thoại khuyến mãi hot</h2>
+        <a href="#" target="_blank">xem tất cả</a>
+        <div class="clean"> </div>
+        <div class="clear-fix">
+            <div class="pro-box">
+                <a href="">
+                  <div class="pro-title">
+                    <h3 class="pro-name" pro-name>Samsung Galaxy A7 (2019)</h3>
+                    <p class="pro-price" pro-price>7.690.000<u><sup>đ</sup></u></p>
+                    <label class="pro-news">Trả góp 0%</label>
+                  </div>
+                   <img class="pro-img" src="image/phone/636759732213297730_Samsung Galaxy A7 (2018)-7690k.png" alt="" />    
+                </a>
+            </div>
+        </div>
+        <div class="pro-box">
+            <a href="">
+                  <div class="pro-title">
+                    <h3 class="pro-name" pro-name>Samsung Galaxy A7 (2019)</h3>
+                    <p class="pro-price" pro-price>7.690.000<u><sup>đ</sup></u></p>
+                    <label class="pro-news">Trả góp 0%</label>
+                  </div>
+                   <img class="pro-img" src="image/phone/636759732213297730_Samsung Galaxy A7 (2018)-7690k.png" alt="" />    
+                </a>
+        </div>
+        <div class="pro-box">
+            <a href="">
+                  <a href="">
+                  <div class="pro-title">
+                    <h3 class="pro-name" pro-name>Samsung Galaxy A7 (2019)</h3>
+                    <p class="pro-price" pro-price>7.690.000<u><sup>đ</sup></u></p>
+                    <label class="pro-news">Trả góp 0%</label>
+                  </div>
+                   <img class="pro-img" src="image/phone/636759732213297730_Samsung Galaxy A7 (2018)-7690k.png" alt="" />    
+                </a>
+        </div>
+        <div class="pro-box">
+            <a href="">
+                  <div class="pro-title">
+                    <h3 class="pro-name" pro-name>Samsung Galaxy A7 (2019)</h3>
+                    <p class="pro-price" pro-price>7.690.000<u><sup>đ</sup></u></p>
+                    <label class="pro-news">Trả góp 0%</label>
+                  </div>
+                   <img class="pro-img" src="image/phone/636759732213297730_Samsung Galaxy A7 (2018)-7690k.png" alt="" />    
+                </a>
+        </div>
+        <div class="pro-box">
+            <a href="">
+                  <div class="pro-title">
+                    <h3 class="pro-name" pro-name>Samsung Galaxy A7 (2019)</h3>
+                    <p class="pro-price" pro-price>7.690.000<u><sup>đ</sup></u></p>
+                    <label class="pro-news">Trả góp 0%</label>
+                  </div>
+                   <img class="pro-img" src="image/phone/636759732213297730_Samsung Galaxy A7 (2018)-7690k.png" alt="" />    
+                </a>
+        </div>
+        <div class="pro-box">
+            <a href="">
+                  <div class="pro-title">
+                    <h3 class="pro-name" pro-name>Samsung Galaxy A7 (2019)</h3>
+                    <p class="pro-price" pro-price>7.690.000<u><sup>đ</sup></u></p>
+                    <label class="pro-news">Trả góp 0%</label>
+                  </div>
+                   <img class="pro-img" src="image/phone/636759732213297730_Samsung Galaxy A7 (2018)-7690k.png" alt="" />    
+                </a>
+        </div>
+        <div class="m-clean"></div>
+        <h2>Laptop Bán chạy </h2>
+        <a href="#">xem tất cả</a>
+        <div class="m-clean"></div>
+        <div class="pro-box">
+            <a href="">
+                  <div class="pro-title">
+                    <h3 class="pro-name" pro-name>Samsung Galaxy A7 (2019)</h3>
+                    <p class="pro-price" pro-price>7.690.000<u><sup>đ</sup></u></p>
+                    <label class="pro-news">Trả góp 0%</label>
+                  </div>
+                   <img class="pro-img" src="image/phone/636759732213297730_Samsung Galaxy A7 (2018)-7690k.png" alt="" />    
+                </a>
+        </div>
+        <div class="pro-box">
+            <a href="">
+                  <div class="pro-title">
+                    <h3 class="pro-name" pro-name>Samsung Galaxy A7 (2019)</h3>
+                    <p class="pro-price" pro-price>7.690.000<u><sup>đ</sup></u></p>
+                    <label class="pro-news">Trả góp 0%</label>
+                  </div>
+                   <img class="pro-img" src="image/phone/636759732213297730_Samsung Galaxy A7 (2018)-7690k.png" alt="" />    
+                </a>
+        </div>
+        <div class="pro-box">
+            <a href="">
+                  <div class="pro-title">
+                    <h3 class="pro-name" pro-name>Samsung Galaxy A7 (2019)</h3>
+                    <p class="pro-price" pro-price>7.690.000<u><sup>đ</sup></u></p>
+                    <label class="pro-news">Trả góp 0%</label>
+                  </div>
+                   <img class="pro-img" src="image/phone/636759732213297730_Samsung Galaxy A7 (2018)-7690k.png" alt="" />    
+                </a>
+        </div>
+        <div class="pro-box">
+            <a href="">
+                  <div class="pro-title">
+                    <h3 class="pro-name" pro-name>Samsung Galaxy A7 (2019)</h3>
+                    <p class="pro-price" pro-price>7.690.000<u><sup>đ</sup></u></p>
+                    <label class="pro-news">Trả góp 0%</label>
+                  </div>
+                   <img class="pro-img" src="image/phone/636759732213297730_Samsung Galaxy A7 (2018)-7690k.png" alt="" />    
+                </a>
+        </div>
+        <div class="pro-box">
+            <a href="">
+                  <div class="pro-title">
+                    <h3 class="pro-name" pro-name>Samsung Galaxy A7 (2019)</h3>
+                    <p class="pro-price" pro-price>7.690.000<u><sup>đ</sup></u></p>
+                    <label class="pro-news">Trả góp 0%</label>
+                  </div>
+                   <img class="pro-img" src="image/phone/636759732213297730_Samsung Galaxy A7 (2018)-7690k.png" alt="" />    
+                </a>
+        </div>
+        <div class="pro-box">
+            <a href="">
+                  <div class="pro-title">
+                    <h3 class="pro-name" pro-name>Samsung Galaxy A7 (2019)</h3>
+                    <p class="pro-price" pro-price>7.690.000<u><sup>đ</sup></u></p>
+                    <label class="pro-news">Trả góp 0%</label>
+                  </div>
+                   <img class="pro-img" src="image/phone/636759732213297730_Samsung Galaxy A7 (2018)-7690k.png" alt="" />    
+                </a>
+        </div>
+        <div class="m-clean"></div>
+        <h2>Phụ kiện giá tốt </h2>
+        <a href="#">xem tất cả</a>
+        <div class="accessories">
+            <div class="acc"><a href="">
 
+                   <img src="image/accessories/636524432304682928_636482583480745126_P1510979240_mieng-dan-kinh-cuong-luc-iphone-x-nillkin-amazing-h-pro-1-(1).jpg" alt="" />
+                   <div style="margin-left: 20px">
+                     <h4>MDMH Kính cường lực IPhone X </h4>
+                     <h6>1990.000đ</h6>
+                   </div>
+                 </a></div>
+            <div class="acc"><a href="">
+
+                   <img src="image/accessories/MDMH Samsung A5 2017 Kính cường lực YVS-50k.jpg" alt="" />
+                   <div style="margin-left: 20px">
+                     <h4>MDMH Samsung A5 2017 Kính cường lực </h4>
+                     <h6>50.000đ</h6>
+                   </div>
+                 </a></div>
+            <div class="acc"><a href="">
+
+                   <img src="image/accessories/636485998598902092_HASP_OP-LUNG-IPHONE-X-SILICON-ROCK-TRONG-00408310-180k.jpg" alt="" />
+                   <div style="margin-left: 20px">
+                     <h4>Ốp lưng IPhone X Silicon Rock</h4>
+                     <h6>180.000đ</h6>
+                   </div>
+                 </a></div>
+            <div class="acc"><a href="">
+
+                   <img src="image/accessories/636441072882802013_HASP-SAC-NHANH-KHONG-DAY-NILLKIN-CHUAN-QI-DE-TRON-CO-DEN-00403948 550k.png" alt="" />
+                   <div style="margin-left: 20px">
+                     <h4>Sạc nhanh không dây Nillkin đế tròn</h4>
+                     <h6>550.00đ</h6>
+                   </div>
+                 </a></div>
+            <div class="acc"><a href="">
+
+                  <img src="image/accessories/op lung iphone 7 meo than 150k.png" alt="" />
+                   <div style="margin-left: 20px">
+                     <h4>Ốp lưng IPhone 7 Plus mèo thần</h4>
+                     <h6>150.000đ</h6>
+                   </div>
+                 </a></div>
+            <div class="acc">
+                <a href="">
+                    <img src="image/accessories/sacduphongSuzumi-5200mah-139k .jpg" alt="" />
+                    <div style="margin-left: 20px">
+                       <h4>Sạc dự phòng Suzumi 5200 mAh</h4>
+                       <h6>1990.000đ</h6>
+                    </div>
+                 </a>
+            </div>
+        </div>
+        <!--end accessories--->
+        <div class="clear"></div>
+    </div>
+    <!--end product-->
+    </div><!-- end div c-wrap-->
+    </div>
+    <!-------------END CONTENT--------------->
+    <!------START FOOTER--------->
+    <!--<div class="m-footer">
+           <div class="m-row">
+              <div class="fo-col">
+                <ul>
+                  <li href="#"> Giới thiệu về công ty</li>
+                  <li href="#"> Các chính sách HTD Shop</li>
+                  <li href="#"> Hệ thống bảo hành</li>
+                  <li href="#"> Giao hàng và thanh toán</li>
+                </ul>
+              </div>
+
+              <div class="fo-col">
+                  <ul >
+                    <li href="#"> Tin tuyển dụng</li>
+                    <li href="#"> Gửi góp ý, khiếu nại</li>
+                    <li href="#"> Hướng dẫn mua online</li>
+                    <li href="#"> Hướng dẫn mua trả góp</li>
+                  </ul>
+              </div>
+
+              <div class="fo-col">
+                  <ul>
+                    <li href="#"> Hệ thống cửa hàng</li>
+                    <li href="#"> Kiểm tra hàng Apple chính hãng</li>
+                    <li href="#"> Giới thiệu máy đổi trả</li>
+                    <li href="#"> Giới thiệu xả hàng</li>
+                  </ul>
+              </div>
+
+              <div class="fo-col">
+                  <ul>
+                    <li href="#">Tư vấn miễn phí (24/7)</li>
+                    <li href="#" style="color: red;font-weight: bold">0000 0000</li>
+                    <li>Ngôn ngữ</li>
+                    <li>Tiếng Việt</li>
+                    <li>Tiếng Anh</li>
+                  </ul>
+              </div>
+
+              <div class="fo-col">
+                  <ul>
+                      <li href="#">Góp ý, phản ánh(8h00 - 22h00)                      </li>
+                      <li style="color: red;font-weight: bold">0000 0000</li>
+                  </ul>
+              </div>          
+            </div>          
+        </div>-->
+    </div>
+    <!---------------END MAIN----------------->
 </body>
 
 </html>
