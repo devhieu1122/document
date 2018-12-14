@@ -1,0 +1,387 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.42857143;
+    color: #000;
+    position: relative;
+    overflow-x: hidden;
+
+    font-size: 14px;
+
+}
+
+.View-all {
+    position: relative;
+    top: 0;
+    left: 0;
+
+
+    width: 100%;
+    background: #f3f3f3;
+
+
+}
+
+.h-content {
+    height: auto;
+    max-width: 1160px;
+    position: relative;
+    margin: 0 auto;
+
+}
+.product-link {
+	margin-bottom: 0;
+}
+.product-link li {
+    display: inline-block;
+    font-size: 12px;
+    /* margin-bottom: 5px; */
+    height: 17px;
+    color: #6e6e6e;
+
+}
+
+.product-link a {
+    text-decoration: none;
+    color: #333;
+}
+.product-link a:hover {
+    text-decoration: underline;
+}
+
+.banner-ads {
+
+    margin-bottom: 30px;
+
+}
+
+.banner-ads img {
+    width: 100%;
+}
+
+.product-bottom {
+    max-width: 1160px;
+   
+
+}
+
+.product-bottom-1 {
+    width: 20%;
+    background: #fff;
+    float: left;
+}
+
+.product-bottom-2 {
+    margin-left: 11.6249px;
+    width: 79%;
+    float: left;
+    padding-bottom: 20px;
+    background: #fff;
+
+
+}
+
+.container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0px 0;
+}
+
+.boloc {
+    font-size: 18px;
+    font-weight: bold;
+    color: #4a4a4a;
+    padding: 15px;
+    border-bottom: 1px solid #e3e3e3;
+    height: auto;
+}
+
+
+/* filter */
+.collapsible {
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    padding: 15px;
+    width: 232px;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    font-family: Arial;
+
+}
+
+.actives,
+.collapsible:hover {
+    background-color: #fff;
+}
+
+.collapsible:after {
+    content: '\002B';
+    color: #d8d8d8;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.actives:after {
+    content: "\2212";
+}
+
+.content {
+    padding-left: 0;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #fff;
+    width: 232px;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+/* checkbox */
+.checkbox-hsx {
+    padding: 0 15px 0 15px;
+}
+
+.c-checkbox {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.c-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background: none;
+    border-radius: 25%;
+    border: 1px solid silver;
+    opacity: 0.6;
+}
+
+/* On mouse-over, add a grey background color */
+.c-checkbox:hover input~.checkmark {
+    background: none;
+    opacity: 1;
+}
+
+/* When the checkbox is checked, add a blue background */
+.c-checkbox input:checked~.checkmark {
+    background-color: #2196F3;
+    opacity: 1;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.c-checkbox input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.c-checkbox .checkmark:after {
+    left: 6px;
+    top: 1px;
+    width: 3px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 1px 1px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    opacity: 1;
+}
+
+/* checkbox */
+.timkiem {
+    position: relative;
+    padding: 0 0 9px 0;
+}
+
+.timkiem input {
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    border: solid 1px #cecece;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-shadow: inset 0 1px 4px 0 rgba(0, 0, 0, .22);
+    -moz-box-shadow: inset 0 1px 4px 0 rgba(0, 0, 0, .22);
+    box-shadow: inset 0 1px 4px 0 rgba(0, 0, 0, .22);
+}
+
+button,
+button:active,
+button:focus {
+    outline: 0;
+    outline-style: none;
+    outline-width: 0;
+}
+
+.button-search {
+    position: absolute;
+    z-index: 9999;
+    right: 8px;
+    top: 10px;
+    background: none;
+    border: none;
+}
+
+.button-search i {
+    font-size: 20px;
+    opacity: 0.5;
+    color: #756e6ecf;
+}
+
+*/
+/* filter */
+
+
+.tieu-chi-chon-san-pham {
+    position: relative;
+}
+
+/* tieu-chi */
+.chon-tieu-chi {
+    position: absolute;
+    right: 15px;
+    top: 0;
+
+}
+
+#filter {
+    padding: 6px 12px;
+    text-align: right;
+    border: 1px solid #ab9f9f8c;
+}
+
+/* tieu-chi */
+
+.ten-san-pham {
+    margin-top: 10px;
+    padding-left: 15px;
+}
+
+.ten-san-pham a {
+    display: inline-block;
+    font-size: 22px;
+    padding-right: 5px;
+    text-decoration: none;
+    color: #333;
+
+}
+
+.ten-san-pham span {
+    font-size: 14px;
+    color: #9b9b9b;
+}
+
+.ten-san-pham a:hover {
+    text-decoration: none;
+    opacity: 0.6;
+}
+
+
+
+
+
+
+.hien-thi-danh-sach-san-pham {
+    width: auto;
+    margin-top: 10px;
+}
+
+
+.hien-thi-danh-sach-san-pham div:nth-child(4n+0) {
+    margin-right: 0;
+
+}
+
+
+.khung-anh {
+    float: left;
+    width: 25%;
+    background: #08BDA6;
+    margin-bottom: 2px;
+    position: relative;
+    background: #fff;
+
+
+
+}
+
+.khung-anh a:hover {
+    color: #333;
+    text-decoration: none;
+    opacity: 0.6;
+}
+
+.khung-anh:hover {
+    -webkit-box-shadow: 1px 2px 7px 0 rgba(0, 0, 0, .21);
+    -moz-box-shadow: 1px 2px 7px 0 rgba(0, 0, 0, .21);
+    box-shadow: 1px 2px 7px 0 rgba(0, 0, 0, .21);
+}
+
+
+
+
+.anh {
+    vertical-align: middle;
+    border-style: none;
+    color: #333;
+    text-decoration: none;
+
+
+}
+
+.anh img {
+    width: 100%;
+}
+
+
+.box-thong-tin-san-pham {
+    padding: 35px 15px;
+}
+
+.box-thong-tin-san-pham p {
+    font-size: 19px;
+    padding: 3px 0 0 0;
+    font-weight: bold;
+}
+
+.trang-san-pham-tiep-theo {
+    width: auto;
+    text-align: center;
+    margin-top: 20px;
+}
+.btn-group input {
+    margin-right: 6px;
+    padding: 5px 6px;
+}
+

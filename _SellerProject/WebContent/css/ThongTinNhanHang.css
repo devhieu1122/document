@@ -1,0 +1,248 @@
+body {
+    background: #f3f3f3;
+}
+
+
+.view-main {   
+    margin: 0 auto;    
+    height: auto;
+}
+
+.view-ri {
+    max-width: 990px;
+    margin: 0 auto;
+    padding: 20px 0;   
+    height: 539px;  
+}
+
+.gh-cot-1 {
+    width: 70%;
+    float: left;
+    border: 1px solid #b4acac6e;
+    display: block;
+    position: relative;
+    margin-right: 19.828px;
+    /* padding: 15px; */
+    background: #fff;
+}
+
+.ttkh {
+   width: 100%;
+    height: 111px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    border-width: 1px;
+    border-bottom-color: #9ea09d;
+    border-bottom-style: solid;
+    padding-top: 10px;
+}
+
+.td-ttkh {
+    font-size: 18px;
+    color: #3d3d3d;
+    font-weight: bold;
+    margin: 0;
+}
+
+.ttkh-chitiet {
+        padding-left: 30px;
+    padding-right: 20px;
+}
+
+.ttkh-chitiets {
+       float: left;
+}
+
+.ttkh-chitiets > p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.ttkh-edit {
+       font-size: 13px;
+    color: #337ab7;
+    float: right;
+    margin-top: 15px;
+
+}
+
+.pt-nhanhang {
+        width: auto;
+    height: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.ptnh {
+   width: auto;
+    color: #d0021b;
+    font-weight: bold;
+    font-size: 18px;
+    padding-left: 15px;
+}
+
+.khung-nhan-hang {
+    
+}
+
+.td-nhanhang {
+       width: auto;
+    height: 18px;
+    color: #6f6f6f;
+    font-size: 13px;
+    margin-bottom: 2px;
+    padding-left: 20px;
+}
+
+.btn-nhanhang {
+        width: 675px;
+    height: auto;
+    border: 1px solid #dcdcdc;
+    margin: 0 auto;
+
+}
+
+
+.btn-nhanhang ul {
+    margin-bottom: 0px;
+    background: #b0afaf3b;
+}
+
+
+.card {
+    margin-bottom: 5px;
+}
+#pills-store div:nth-child(3) {
+    margin-bottom: 0;
+}
+
+#pills-store-tab {
+        padding: 0;
+    width: 336px;
+    height: 105px;
+}
+
+#pills-home-tab {
+    padding: 0;
+    width: 336px;
+    height: 105px;
+}
+
+.nav-item img {
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.thong-tin-khach-hang {
+        height: auto;
+    padding: 15px 15px 0 0;
+    background-color: white;
+    border-style: solid;
+    border-bottom-width: 1px;
+    border-top-width: 1px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    border-color: #f3f3f3;
+
+}
+
+.form-dien-tt {
+       width: 658px;
+    display: inline-block;
+    padding-left: 15px;
+}
+
+.lb {
+    width: 200px;
+    height: 34px;
+    font-weight: bold;
+
+}
+
+.txt {
+    float: right;
+    width: 443px;
+    height: 36px;
+    border-radius: 3px 3px 3px 3px;
+    margin-top: -52px;
+    margin-right: 15px;
+    padding-left: 15px;
+}
+.khung-btn-xacnhan{
+   width: 673px;
+    height: 50px;
+    padding-bottom: 15px;
+    padding-top: 5px;
+    padding-left: 15px;
+    padding-right: 30px;
+}
+.btn-continue{
+    width: 140px;
+    padding: 7px 0;
+    color: white;
+    background-color: #d0021b;
+    float: right;
+}
+.chon-hinh-thuc-thanh-toan{
+    width: auto;
+    height: 25px;
+   margin-top: 20px;
+}
+.httt{
+    width: auto;
+    height: 25px;
+    color: #d0021b;
+    font-weight: bold;
+    font-size: 18px;
+}
+.gh-cot-2{
+    width: 28%;
+    border: 1px solid #b4acac6e;
+    float: left;
+    background: #fff;
+}
+
+.dh-1 {
+    
+       font-size: 24px;
+    font-weight: bold;
+    border-bottom: 1px solid #b4acac6e;
+    padding: 10px;
+}
+.dh-1 p {
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+.dh-2,.dh-3,.dh-4{
+   
+           padding-top: 5px;
+    padding-left: 15px;
+    border-bottom: 1px solid #5e57576e;
+    padding-bottom: 5px;
+}
+.dh-2 p {
+    margin: 0;
+    padding: 5px;
+}
+.dh-3 p {
+    margin: 0;
+    padding: 5px 0;
+}
+.dh-4 p{
+        font-weight: bold;
+    font-size: 20px;
+    margin: 0;
+    padding: 5px 0;
+}
+
+/**footer**/
+.fo-col ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
