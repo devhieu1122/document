@@ -26,7 +26,22 @@ public class ServletLogout extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.getSession().invalidate();
-		toDo(request, response);
+		response.setContentType("text/html");
+		Cookie loginCookie = null;
+		Cookie[] cookies = request.getCookies();
+		if (cookies != null) {
+			for (Cookie cookie : cookies) {
+				if (cookie.getName().equals("username")) {
+					loginCookie = cookie;
+					break;
+				}
+			}
+		}
+		if (loginCookie != null) {
+			loginCookie.setMaxAge(0);
+			response.addCookie(loginCookie);
+		}
+		response.sendRedirect("./index.jsp");
 	}
 
 	/**
@@ -35,27 +50,22 @@ public class ServletLogout extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		toDo(request, response);
-	}
-	
-	private void toDo(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		response.setContentType("text/html");
 		Cookie loginCookie = null;
-		Cookie [] cookies= request.getCookies();
-		if(cookies !=null) {
-			for(Cookie cookie :cookies) {
-				if(cookie.getName().equals("username")) {
+		Cookie[] cookies = request.getCookies();
+		if (cookies != null) {
+			for (Cookie cookie : cookies) {
+				if (cookie.getName().equals("username")) {
 					loginCookie = cookie;
 					break;
 				}
 			}
 		}
-		if(loginCookie!=null) {
+		if (loginCookie != null) {
 			loginCookie.setMaxAge(0);
 			response.addCookie(loginCookie);
 		}
-		response.sendRedirect("/login.jsp");
-		
+		response.sendRedirect("./index.jsp");
 	}
 
 }

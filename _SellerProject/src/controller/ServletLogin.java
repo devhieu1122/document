@@ -29,27 +29,18 @@ public class ServletLogin extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		//// toDo(request, response);
-	/*String command = request.getParameter("command");
-		String url = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
-				+ request.getContextPath();
-		if (command.equals("dangxuat")) {
-			HttpSession session = request.getSession();
-			session.invalidate();
-			response.sendRedirect("index.jsp");
-		}*/
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		/*HttpSession session = request.getSession();
-		session.removeAttribute("username");
-		response.sendRedirect("login.jsp");*/
+		/*
+		 * String command = request.getParameter("command"); String url =
+		 * request.getScheme() + "://" + request.getServerName() + ":" +
+		 * request.getServerPort() + request.getContextPath(); if
+		 * (command.equals("dangxuat")) { HttpSession session = request.getSession();
+		 * session.invalidate(); response.sendRedirect("index.jsp"); }
+		 */
+
+		/*
+		 * HttpSession session = request.getSession();
+		 * session.removeAttribute("username"); response.sendRedirect("login.jsp");
+		 */
 
 	}
 
@@ -68,13 +59,11 @@ public class ServletLogin extends HttpServlet {
 		String password = request.getParameter("password");
 
 		String err = "";
-		if (username.equals("") || password.equals("")) {
-			err += "Vui lòng nhập đầy đủ thông tin";
-		} else {
-			if (userDAO._login(username, MD5_MaHoaPass.maHoaDuLieu(password)) == false) {
-				err += "Tên đăng nhập hoặc mật khẩu không chính xác!";
-			}
+
+		if (userDAO._login(username, MD5_MaHoaPass.maHoaDuLieu(password)) == false) {
+			err += "Tên đăng nhập hoặc mật khẩu không chính xác!";
 		}
+
 		if (err.length() > 0) {
 			request.setAttribute("username", username);
 			request.setAttribute("err", err);

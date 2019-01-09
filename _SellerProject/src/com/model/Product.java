@@ -3,9 +3,9 @@ package com.model;
 import java.sql.Date;
 
 public class Product {
-	int id_product;
-	int id_category;
-	int id_producer;
+	long id_product;
+	long id_category;
+	long id_producer;
 	String name;
 	long price;
 	int quantity;
@@ -19,7 +19,7 @@ public class Product {
 	public Product() {
 	}
 
-	public Product(int id_product, int id_category, int id_producer, String name, long price, int quantity,
+	public Product(long id_product, long id_category, long id_producer, String name, long price, int quantity,
 			String image, String discriptions, Date time_update, int promotion, Date start_promotion,
 			Date end_promotion) {
 		super();
@@ -37,7 +37,7 @@ public class Product {
 		this.end_promotion = end_promotion;
 	}
 
-	public int getId_product() {
+	public long getId_product() {
 		return id_product;
 	}
 
@@ -45,7 +45,7 @@ public class Product {
 		this.id_product = id_product;
 	}
 
-	public int getId_category() {
+	public long getId_category() {
 		return id_category;
 	}
 
@@ -53,7 +53,7 @@ public class Product {
 		this.id_category = id_category;
 	}
 
-	public int getId_producer() {
+	public long getId_producer() {
 		return id_producer;
 	}
 

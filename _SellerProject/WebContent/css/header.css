@@ -601,25 +601,7 @@ h3 {
 /*footer*/
 
 
-#bttop {
-    background: rgb(100, 98, 98);
-    text-align: center;
-    padding: 7px 9px;
-    position: fixed;
-    border-radius: 10px;
-    bottom: 110px;
-    right: 24px;
-    cursor: pointer;
-    display: none;
-    color: #fff;
-    font-size: 24px;
-    font-weight: 900;
-    opacity: 0.7;
-}
 
-#bttop:hover {
-    opacity: 1;
-}
 
 
 

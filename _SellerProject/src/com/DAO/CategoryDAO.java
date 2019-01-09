@@ -21,7 +21,7 @@ public class CategoryDAO implements ICategoryDAO {
 		try {
 			_conn = SQLConnection.connect();
 			ps = (PreparedStatement) _conn.prepareStatement(sql);
-			ps.setInt(1, c.getId_category());
+			ps.setLong(1, c.getId_category());
 			ps.setString(2, c.getName_category());
 			ps.executeUpdate();
 			_conn.close();
@@ -31,12 +31,12 @@ public class CategoryDAO implements ICategoryDAO {
 	}
 
 	@Override
-	public void deleteCategory(int id_category) {
+	public void deleteCategory(long id_category) {
 		sql = "DELETE FROM category id_category WHERE id_category=?";
 		try {
 			_conn = SQLConnection.connect();
 			ps = (PreparedStatement) _conn.prepareStatement(sql);
-			ps.setInt(1, id_category);
+			ps.setLong(1, id_category);
 			ps.executeUpdate();
 			_conn.close();
 
@@ -55,7 +55,7 @@ public class CategoryDAO implements ICategoryDAO {
 			ResultSet rs = ps.executeQuery();
 
 			while (rs.next()) {
-				int id_category = rs.getInt("id_category");
+				long id_category = rs.getLong("id_category");
 				String name_category = rs.getString("name_category");
 
 				_list.add(new Category(id_category, name_category));
@@ -69,17 +69,17 @@ public class CategoryDAO implements ICategoryDAO {
 	}
 
 	@Override
-	public Category getCategory(int id_category) {
-		sql = "select * from category where id_categoy=?";
+	public Category getCategory(long id_category) {
+		sql = "select * from category where id_category=?";
 		Category _category = new Category();
 		_conn = SQLConnection.connect();
 
 		try {
 			ps = (PreparedStatement) _conn.prepareStatement(sql);
-			ps.setInt(1, id_category);
+			ps.setLong(1, id_category);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
-				int id_cat = rs.getInt("id_category");
+				long id_cat = rs.getLong("id_category");
 				String name_cat = rs.getString("name_category");
 				_category = new Category(id_cat, name_cat);
 			}
@@ -98,7 +98,7 @@ public class CategoryDAO implements ICategoryDAO {
 		_conn = SQLConnection.connect();
 		try {
 			ps = (PreparedStatement) _conn.prepareStatement(sql);
-			ps.setInt(1, c.getId_category());
+			ps.setLong(1, c.getId_category());
 			ps.setString(2, c.getName_category());
 			ps.executeUpdate();
 			_conn.close();
@@ -110,8 +110,15 @@ public class CategoryDAO implements ICategoryDAO {
 
 	public static void main(String[] args) {
 		CategoryDAO cat = new CategoryDAO();
-		Category category = new Category();
-		System.out.println(cat.getList());
+		/*int count = 0;
+		for (Category c : cat.getList()) {
+			count++;
+			System.out.println(c.getName_category());
+		}
+		System.out.println(count);*/
+		
+		System.out.println(cat.getCategory(1).getName_category());
+		System.out.println(cat.getCategory(1));
 	}
 
 }

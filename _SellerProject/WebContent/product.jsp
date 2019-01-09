@@ -1,30 +1,27 @@
+<%@page import="java.text.DecimalFormat"%>
+<%@page import="com.DAO.ProductDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<%
+	ProductDAO pDAO = new ProductDAO();
+	long id_product = 0;
+	if (request.getParameter("id_product") != null) {
+		id_product = Long.parseLong(request.getParameter("id_product"));
+	}
+%>
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>HTDStore - Huawei Y9 (2019)</title>
+	<title>HDTStore - <%=pDAO.getProduct(id_product).getName()%></title>
 	<LINK REL="SHORTCUT ICON" HREF="image/logo/logo.png">
 
-		<link rel="stylesheet"
-			href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
-			<!--Slider-->
+				<!--Slider-->
 			<script src="js/slider_head.js" type="text/javascript"></script>
-			<link href="https://fonts.googleapis.com/css?family=Roboto"
-				rel="stylesheet">
-
-				<link href="https://fonts.googleapis.com/css?family=Roboto"
-					rel="stylesheet">
-
-
-					<!--slider-->
-					<link rel="stylesheet"
-						href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-						<link rel="stylesheet"
-							href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+			
+					<!--slider-->					
 							<script
 								src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 							<script
@@ -32,72 +29,87 @@
 							<script
 								src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 							<link rel="stylesheet" type="text/css" href="css/Product.css">
-<script language="javascript">
-	$(document).ready(function() {
-		initSlideShow();
+								<script language="javascript">
+									$(document).ready(function() {
+										initSlideShow();
 
-	});
+									});
 
-	function initSlideShow() {
-		if ($(".slideshow div").length > 1) //Only run slideshow if have the slideshow element and have more than one image.
-		{
-			var transationTime = 3000;//5000 mili seconds i.e 5 second
-			$(".slideshow div:first").addClass('active'); //Make the first image become active i.e on the top of other images
-			setInterval(slideChangeImage, transationTime); //set timer to run the slide show.
-		}
-	}
+									function initSlideShow() {
+										if ($(".slideshow div").length > 1) //Only run slideshow if have the slideshow element and have more than one image.
+										{
+											var transationTime = 3000;//5000 mili seconds i.e 5 second
+											$(".slideshow div:first").addClass(
+													'active'); //Make the first image become active i.e on the top of other images
+											setInterval(slideChangeImage,
+													transationTime); //set timer to run the slide show.
+										}
+									}
 
-	function slideChangeImage() {
-		var active = $(".slideshow div.active"); //Get the current active element.
-		if (active.length == 0) {
-			active = $(".slideshow div:last"); //If do not see the active element is the last image.
-		}
+									function slideChangeImage() {
+										var active = $(".slideshow div.active"); //Get the current active element.
+										if (active.length == 0) {
+											active = $(".slideshow div:last"); //If do not see the active element is the last image.
+										}
 
-		var next = active.next().length ? active.next()
-				: $(".slideshow div:first"); //get the next element to do the transition
-		active.addClass('lastactive');
-		next.css({
-			opacity : 0.0
-		}) //do the fade in fade out transition
-		.addClass('active').animate({
-			opacity : 1.0
-		}, 1500, function() {
-			active.removeClass("active lastactive");
-		});
+										var next = active.next().length ? active
+												.next()
+												: $(".slideshow div:first"); //get the next element to do the transition
+										active.addClass('lastactive');
+										next
+												.css({
+													opacity : 0.0
+												})
+												//do the fade in fade out transition
+												.addClass('active')
+												.animate(
+														{
+															opacity : 1.0
+														},
+														1500,
+														function() {
+															active
+																	.removeClass("active lastactive");
+														});
 
-	}
-</script>
-<script language="JavaScript">
-	var slideIndex = 1;
-	showSlides(slideIndex);
+									}
+								</script>
+								<script language="JavaScript">
+									var slideIndex = 1;
+									showSlides(slideIndex);
 
-	// Next/previous controls
-	function plusSlides(n) {
-		showSlides(slideIndex += n);
-	}
+									// Next/previous controls
+									function plusSlides(n) {
+										showSlides(slideIndex += n);
+									}
 
-	// Thumbnail image controls
+									// Thumbnail image controls
 
-	function showSlides(n) {
-		var i;
-		var slides = document.getElementsByClassName("mySlides");
-		if (n > slides.length) {
-			slideIndex = 1
-		}
-		if (n < 1) {
-			slideIndex = slides.length
-		}
-		for (i = 0; i < slides.length; i++) {
-			slides[i].style.display = "none";
-		}
+									function showSlides(n) {
+										var i;
+										var slides = document
+												.getElementsByClassName("mySlides");
+										if (n > slides.length) {
+											slideIndex = 1
+										}
+										if (n < 1) {
+											slideIndex = slides.length
+										}
+										for (i = 0; i < slides.length; i++) {
+											slides[i].style.display = "none";
+										}
 
-		slides[slideIndex - 1].Product.display = "block";
+										slides[slideIndex - 1].Product.display = "block";
 
-	}
-</script>
+									}
+								</script>
 </head>
 
 <body style="font-size: 14px; background: #f3f3f3">
+	<%
+		
+	%>
+
 	<div class="product-view">
 		<!-- div toàn trang -->
 		<!-- header o day -->
@@ -106,10 +118,10 @@
 		<!--begin content-->
 		<div class="link">
 			<ul class="f-link">
-				<li><a href="index.jsp">Trang chủ</a></li>
-				<li><a href="#"> / Điện thoại</a></li>
-				<li><a href="product.jsp"> / Huawei </a></li>
-				<li>/ Huawei Y9 (2019)</li>
+				<li><a href="index.jsp">Trang chủ&nbsp;/</a></li>
+				<li><a href="category.jsp">&nbsp;Điện thoại&nbsp;/</a></li>
+				<li><a href="product.jsp">&nbsp;Huawei&nbsp;/</a></li>
+				<li>&nbsp;<%=pDAO.getProduct(id_product).getName()%></li>
 			</ul>
 		</div>
 		<!--noi dung trang-->
@@ -117,8 +129,9 @@
 			<div class="tieu-de-top">
 				<!-- Product name -->
 				<div>
-					<h1 class="product-name">
-						Huawei Y9 (2019) <span class="id-product">(No.00508561)</span>
+					<h1 class="product-name"><%=pDAO.getProduct(id_product).getName()%>&nbsp;<span
+							class="id-product">&nbsp;(No.00<%=pDAO.getProduct(id_product).getId_product()%>)
+						</span>
 					</h1>
 				</div>
 				<!--detail-Rating-->
@@ -196,8 +209,8 @@
 					<div class="c-price">
 						<p class="title-price">
 							5.160.000₫
-							<del>5.490.000 ₫</del>
-							<label class="news">Giảm 8%</label>
+							<del><%=new DecimalFormat("###,###,###").format(pDAO.getProduct(id_product).getPrice()) %> ₫</del>
+							<label class="news">Giảm <%=pDAO.getProduct(id_product).getPromotion()%>%</label>
 						</p>
 					</div>
 					<!--Status Product-->
@@ -218,7 +231,7 @@
 						<!--Button-->
 						<div id="btn-order">
 							<ul class="khung-nut-dat-hang">
-								<li class="nut-mua-ngay-1-gio"><a href="order.jsp">
+								<li class="nut-mua-ngay-1-gio"><a href="ServletCart?command=plus&id_product=1">
 										<p>MUA NGAY</p> <span>Giao hàng trong 1 giờ hoặc nhận
 											tại shop</span>
 								</a></li>
@@ -683,16 +696,16 @@
 
 												<li style="font-size: 18px; color: red; font-weight: bold">Camera
 													Trước</li>
-												<li><label>Độ phân giải :</label> <span>16 MP
-														và 2 MP (2 camera)</span></li>
-												<li><label>Thông tin khác :</label> <span>Chế
-														độ làm đẹp 3D, chế độ chân dung, flash màn hình, chụp hình
+												<li><label>Độ phân giải :</label> <span>16 MP và
+														2 MP (2 camera)</span></li>
+												<li><label>Thông tin khác :</label> <span>Chế độ
+														làm đẹp 3D, chế độ chân dung, flash màn hình, chụp hình
 														bằng cử chỉ, mở khóa màn hình bằng khuôn mặt</span></li>
 
 												<li style="font-size: 18px; color: red; font-weight: bold">Camera
 													Sau</li>
-												<li><label>Độ phân giải :</label> <span>13 MP
-														và 2 MP (2 camera)</span></li>
+												<li><label>Độ phân giải :</label> <span>13 MP và
+														2 MP (2 camera)</span></li>
 												<li><label>Quay phim :</label> <span>Full HD
 														1080p@30fps</span></li>
 												<li><label>Đèn Flash :</label> <span>Có</span></li>
@@ -722,8 +735,7 @@
 												<li><label>Danh bạ lưu trữ :</label> <span>Không
 														giới hạn</span></li>
 												<li><label>ROM :</label> <span>64 GB</span></li>
-												<li><label>Bộ nhớ còn lại :</label> <span>59GB</span>
-												</li>
+												<li><label>Bộ nhớ còn lại :</label> <span>59GB</span></li>
 												<li><label>Thẻ nhớ ngoài :</label> <span>MicroSD</span>
 												</li>
 												<li><label>Hỗ trợ thẻ nhớ tối đa :</label> <span>400
@@ -731,8 +743,8 @@
 
 												<li style="font-size: 18px; color: red; font-weight: bold">Thiết
 													kế &amp; Trọng lượng</li>
-												<li><label>Kiểu dáng :</label> <span>Nguyên
-														Khối + Thẳng</span></li>
+												<li><label>Kiểu dáng :</label> <span>Nguyên Khối
+														+ Thẳng</span></li>
 												<li><label>Chất liệu :</label> <span>Khung kim
 														loại + mặt kính cường lực</span></li>
 												<li><label>Kích thước :</label> <span>162.4mm x
@@ -748,8 +760,7 @@
 														mAh </span></li>
 												<li><label>Pin có thể tháo rời :</label> <span>Không</span>
 												</li>
-												<li><label>Chế độ sạc nhanh :</label> <span>Có</span>
-												</li>
+												<li><label>Chế độ sạc nhanh :</label> <span>Có</span></li>
 
 												<li style="font-size: 18px; color: red; font-weight: bold">Kết
 													nối &amp; Cổng giao tiếp</li>

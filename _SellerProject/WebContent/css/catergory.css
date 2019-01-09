@@ -380,8 +380,9 @@ button:focus {
     text-align: center;
     margin-top: 20px;
 }
-.btn-group input {
-    margin-right: 6px;
-    padding: 5px 6px;
+.btn-group li {
+   /* margin-right: 6px;  */  
+    list-style: none;
+    display: inline-block;
 }
 

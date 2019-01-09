@@ -9,12 +9,30 @@
     <title>HTDStore - Điện thoại, laptop, phụ kiện chính hãng</title>
     <LINK REL="SHORTCUT ICON" HREF="image/logo/logo.png">
     
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
-    <!--Back to top-->
-    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js' type='text/javascript'></script>
+    <!--Back to top-->    
     <script src="js/back_to_top.js" type="text/javascript"></script>
+    <style>
+    #bttop {
+        background: rgb(100, 98, 98);
+        text-align: center;
+        padding: 7px 9px;
+        position: fixed;
+        border-radius: 10px;
+        bottom: 110px;
+        right: 24px;
+        cursor: pointer;
+        display: none;
+        color: #fff;
+        font-size: 24px;
+        font-weight: 900;
+        opacity: 0.7;
+    }
 
-    <link href="css/header.css" rel="stylesheet" type="text/css" />
+    #bttop:hover {
+        opacity: 1;
+    }
+    </style>
+
 </head>
 <body>
  <div id='bttop' title="Về đầu trang" style="height: 41px;"><i class="fas fa-chevron-up" ></i></div>

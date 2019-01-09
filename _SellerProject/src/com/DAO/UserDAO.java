@@ -3,8 +3,6 @@ package com.DAO;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-
 import com.db.SQLConnection;
 import com.model.User;
 import com.mysql.jdbc.PreparedStatement;
@@ -47,6 +45,27 @@ public class UserDAO implements IUserDAO {
 			_conn = (Connection) SQLConnection.connect();
 			ps = (PreparedStatement) _conn.prepareStatement(sql);
 			ps.setString(1, _userName);
+			ResultSet rs = ps.executeQuery();
+			if (rs.next()) {
+				_conn.close();
+				return true;
+			}
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return false;
+	}
+	@Override
+	public boolean _checkEmail(String email) {
+		sql = "select * from user where email=?";
+
+		try {
+			_conn = (Connection) SQLConnection.connect();
+			ps = (PreparedStatement) _conn.prepareStatement(sql);
+			ps.setString(1, email);
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
 				_conn.close();
@@ -173,7 +192,11 @@ public class UserDAO implements IUserDAO {
 //		_dao.updateUser(new User(4, "dfg", "Nguyen Hieu", MD5_MaHoaPass.maHoaDuLieu("123456"), null, "nam", "hieubungke1122@gmail.com", "0164470022", null, 1));
 		
 //		System.out.println(_dao.getUser("nguyen hieu"));
-		System.out.println(_dao._login("hieubungke1122", MD5_MaHoaPass.maHoaDuLieu("hieu_1998")));
+//		System.out.println(_dao._login("nguyenvana", MD5_MaHoaPass.maHoaDuLieu("12345")));
+		UserDAO userDAO = new UserDAO();
+		String username= "nguyenhieu2pro";
+		User user= userDAO.getUser(username);
+		System.out.println(user.get_name());
 	}
 
 }

@@ -1,23 +1,23 @@
 package com.model;
 
 public class Category {
-	int id_category;
+	long id_category;
 	String name_category;
 
 	public Category() {
 
 	}
 
-	public Category(int id_category, String name_category) {
+	public Category(long id_category, String name_category) {
 		this.id_category = id_category;
 		this.name_category = name_category;
 	}
 
-	public int getId_category() {
+	public long getId_category() {
 		return id_category;
 	}
 
-	public void setId_category(int id_category) {
+	public void setId_category(long id_category) {
 		this.id_category = id_category;
 	}
 
