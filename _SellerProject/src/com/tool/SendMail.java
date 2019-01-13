@@ -29,7 +29,7 @@ public class SendMail {
 	            message.setHeader("Content-Type", "text/plain; charset=UTF-8");
 	            message.setFrom(new InternetAddress("devhjeu1998@gmail.com"));
 	            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
-	            message.setSubject(subject);
+	            message.setSubject(subject,"utf-8");
 	            message.setText(text);
 	            Transport.send(message);
 	        } catch (MessagingException e) {
