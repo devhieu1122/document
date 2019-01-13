@@ -225,16 +225,52 @@ public class ProductDAO implements IProductDAO {
 		return count;
 	}
 
+	public List<Product> searchByNameProduct(String Iname) throws SQLException {
+		_conn = SQLConnection.connect();
+		sql = "SELECT * FROM `product` WHERE `name_product`LIKE '%' ? '%' ORDER BY `price` ASC; ";
+
+		List<Product> list = new ArrayList<Product>();
+		ps = (PreparedStatement) _conn.prepareStatement(sql);
+		ps.setString(1, Iname);
+		ResultSet rs = ps.executeQuery();
+
+		while (rs.next()) {
+			long id = rs.getLong("id_product");
+			long id_cat = rs.getLong("id_category");
+			long id_producer = rs.getLong("id_producer");
+			String name = rs.getString("name_product");
+			long price = rs.getLong("price");
+			int quanlity = rs.getInt("quanlity");
+			String image = rs.getString("images");
+			String discriptions = rs.getString("discriptions");
+			Date time = rs.getDate("time_update");
+			int promotion = rs.getInt("promotion");
+			Date start = rs.getDate("start_promotion");
+			Date end = rs.getDate("end_promotion");
+			list.add(new Product(id, id_cat, id_producer, name, price, quanlity, image, discriptions, time, promotion,
+					start, end));
+		}
+		_conn.close();
+
+		return list;
+	}
+
 	@Override
 	public List<Product> getListPage(ArrayList<Product> arr, int start, int end) {
 		List<Product> list = new ArrayList<Product>();
-		for (int i = start; i < end; i++) {
-			list.add(arr.get(i));
+		if (start + end < list.size()) {
+			for (int i = start; i < start + end; i++) {
+				list.add(list.get(i));
+			}
+		} else {
+			for (int i = start; i < list.size(); i++) {
+				list.add(list.get(i));
+			}
 		}
 		return list;
 	}
 
-	// đếm số sản phẩm theo id thể loại//
+	// Ä‘áº¿m sá»‘ sáº£n pháº©m theo id thá»ƒ loáº¡i//
 	@Override
 	public int countByCategory(long id_category) {
 		int count = 0;
@@ -297,19 +333,31 @@ public class ProductDAO implements IProductDAO {
 		ProductDAO p = new ProductDAO();
 		// System.out.println(p.getListByCategory(1).toString());
 		// System.out.println(p.getProduct(2).toString());
-		// System.out.println(p.searchList("Samsung", "Điện thoại"));
+		// System.out.println(p.searchList("Samsung", "Ä�iá»‡n thoáº¡i"));
 
-		/*List<Product> list = p.getListPage((ArrayList<Product>) p.getListByCategory(1), 0, 5);
+		
+//		  List<Product> list = p.getListPage((ArrayList<)
+//		  p.getListByCategory(1), 0, 5);
+		  
+//		  for (Product p1 : list) {
+//		  
+//		  System.out.println(p1.getName()); System.out.println(p1.getPrice()); }
+//		  
+//		  System.out.println(p.countByCategory(1));
+		 
+//		  System.out.println(p.getListProductByCategory(1, 0, 8));
 
-		for (Product p1 : list) {
-
-			System.out.println(p1.getName());
-			System.out.println(p1.getPrice());
+		/* System.out.println(p.getListByCategory(3)); */
+//		System.out.println(p.getListPage(plist, 1, 5));
+//		plist = (ArrayList<Product>) p.getListByCategory(1);
+//		System.out.println(p.getListPage(plist, 0, 21));
+//		System.out.println(plist.size());
+		/*try {
+			plist = (ArrayList<Product>) p.searchByNameProduct("dell");
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
-
-		System.out.println(p.countByCategory(1));
-		System.out.println(p.getListProductByCategory(1, 0, 8));*/
-		System.out.println(p.getListByCategory(3));
+		System.out.println(plist);*/
 	}
 
 }

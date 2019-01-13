@@ -60,9 +60,9 @@
 								<li class="step-todo four">
 									<span>04. Giao hàng</span>
 								</li>
-								<li class="step-todo last" id="step_end">
+								<!-- <li class="step-todo last" id="step_end">
 									<span><em>05.</em> Thanh toán</span>
-								</li>
+								</li> -->
 							</ul>									
 						</div>
 						<!-- SHOPING-CART-MENU END -->

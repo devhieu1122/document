@@ -192,11 +192,11 @@ public class UserDAO implements IUserDAO {
 //		_dao.updateUser(new User(4, "dfg", "Nguyen Hieu", MD5_MaHoaPass.maHoaDuLieu("123456"), null, "nam", "hieubungke1122@gmail.com", "0164470022", null, 1));
 		
 //		System.out.println(_dao.getUser("nguyen hieu"));
-//		System.out.println(_dao._login("nguyenvana", MD5_MaHoaPass.maHoaDuLieu("12345")));
-		UserDAO userDAO = new UserDAO();
+		System.out.println(_dao._login("nguyenvana", MD5_MaHoaPass.maHoaDuLieu("12345")));
+		/*UserDAO userDAO = new UserDAO();
 		String username= "nguyenhieu2pro";
 		User user= userDAO.getUser(username);
-		System.out.println(user.get_name());
+		System.out.println(user.get_name());*/
 	}
 
 }

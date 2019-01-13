@@ -62,8 +62,8 @@ public class ServletCartLogin extends HttpServlet {
 				// time reset cookie
 				loginCookie.setMaxAge(30 * 60);
 				response.addCookie(loginCookie);
-				response.sendRedirect("checkout-address.jsp");
-				url = "/checkout-address.jsp";
+				response.sendRedirect("checkout.jsp");
+				url = "/checkout.jsp";
 				System.out.println("Login success");
 			} else {
 				url = "/checkout-signin.jsp";

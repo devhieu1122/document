@@ -154,7 +154,7 @@
 			for (Category cat: catDAO.getList()){
 		%>
 		<h2><%=cat.getName_category()%></h2>
-		<a href="category.jsp?id_category=<%=cat.getId_category()%>&pages=1" target="_blank">xem tất cả</a>
+		<a href="category.jsp?id_category=<%=cat.getId_category()%>&pages=1" target="_blank" title="<%=cat.getName_category()%>">xem tất cả</a>
 		<div class="clean"></div>
 		<%
 			
@@ -164,13 +164,13 @@
 		%>
 
 		<div class="pro-box">
-			<a href="product.jsp?id_product=<%=p.getId_product()%>">
+			<a href="product.jsp?id_product=<%=p.getId_product()%>" title="<%=p.getName()%>">
 				<div class="pro-title">
 					<h3 class="pro-name" pro-name><%=p.getName()%></h3>
 					<p class="pro-price" pro-price>
 						<%=new DecimalFormat("###,###,###").format(p.getPrice())%><u><sup>đ</sup></u>
 					</p>
-					<label class="pro-news">Trả góp 0%</label>
+					<label class="pro-news">Giảm giá <%=p.getPromotion()%>%</label>
 				</div> <img class="pro-img" src="<%=p.getImage()%>" alt="<%=p.getName()%>" />
 			</a>
 		</div>

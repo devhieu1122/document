@@ -1,5 +1,8 @@
 eclipse.preferences.version=1
 encoding//WebContent/css/hder.css=UTF-8
+encoding//src/com/DAO/ProductDAO.java=UTF-8
+encoding//src/com/tool/SendMail.java=UTF-8
 encoding//src/controller/ServletCartLogin.java=UTF-8
+encoding//src/controller/ServletCheckout.java=UTF-8
 encoding//src/controller/ServletLogin.java=UTF-8
 encoding//src/controller/ServletRegister.java=UTF-8

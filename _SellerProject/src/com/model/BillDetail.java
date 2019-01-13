@@ -4,14 +4,14 @@ public class BillDetail {
 	long id_billDetail;
 	long id_bill;
 	long id_product;
-	double price;
+	long price;
 	int quantity;
 
 	public BillDetail() {
 
 	}
 
-	public BillDetail(long id_billDetail, long id_bill, long id_product, double price, int quantity) {
+	public BillDetail(long id_billDetail, long id_bill, long id_product, long price, int quantity) {
 		super();
 		this.id_billDetail = id_billDetail;
 		this.id_bill = id_bill;
@@ -44,11 +44,11 @@ public class BillDetail {
 		this.id_product = id_product;
 	}
 
-	public double getPrice() {
+	public long getPrice() {
 		return price;
 	}
 
-	public void setPrice(double price) {
+	public void setPrice(long price) {
 		this.price = price;
 	}
 

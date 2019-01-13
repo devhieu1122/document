@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="css/hder.css">
 </head>
 <body>
-	<!-- <jsp:include page="header.jsp"></jsp:include> -->
+	<jsp:include page="header.jsp"></jsp:include>
 	<%
 		String username = null;
 		Cookie[] cookies = request.getCookies();
@@ -27,9 +27,9 @@
 			for (Cookie cookie : cookies) {
 				if (cookie.getName().equals("username"))
 					username = cookie.getValue();
-				}
 			}
-			
+		}
+
 		Cart cart = (Cart) session.getAttribute("cart");
 		if (cart == null) {
 			cart = new Cart();
@@ -64,10 +64,10 @@
 						<ul class="step">
 							<li class="step-current first"><span>01. Tóm tắt</span></li>
 							<li class="step-todo second"><span>02. Đăng nhập</span></li>
-							<li class="step-todo third"><span>03. Địa chỉ</span></li>
-							<li class="step-todo four"><span>04. Giao hàng</span></li>
-							<li class="step-todo last" id="step_end"><span>05.
-									Thanh toán</span></li>
+							<li class="step-todo third"><span>03. Giao hàng</span></li>
+							<li class="step-todo four"><span>04. Địa chỉ</span></li>
+							<!-- <li class="step-todo last" id="step_end"><span>05.
+									Thanh toán</span></li> -->
 						</ul>
 					</div>
 					<!-- SHOPING-CART-MENU END -->
@@ -92,15 +92,19 @@
 							<tbody>
 								<!-- SINGLE CART_ITEM START -->
 								<%
-									for(Map.Entry<Long, Item> clist : cart.getCartItems().entrySet()){
-								%> 
-								
+									for (Map.Entry<Long, Item> clist : cart.getCartItems().entrySet()) {
+								%>
+
 								<tr>
-									<td class="cart-product"><a href="product.jsp?id_product=<%=clist.getValue().getProduct().getId_product()%>"><img alt="Blouse"
+									<td class="cart-product"><a
+										href="product.jsp?id_product=<%=clist.getValue().getProduct().getId_product()%>"><img
+											alt="Blouse"
 											src="<%=clist.getValue().getProduct().getImage()%> "></a></td>
 									<td class="cart-description">
 										<p class="product-name">
-											<a href="product.jsp?id_product=<%=clist.getValue().getProduct().getId_product()%>"> <%=clist.getValue().getProduct().getName() %></a>
+											<a
+												href="product.jsp?id_product=<%=clist.getValue().getProduct().getId_product()%>">
+												<%=clist.getValue().getProduct().getName()%></a>
 										</p> <small>SKU : demo_1</small> <small><a href="#">Size
 												: S, Color : Orange</a></small>
 									</td>
@@ -108,7 +112,7 @@
 											stock</span></td>
 									<td class="cart-unit">
 										<ul class="price text-right">
-											<li class="price"><%=new DecimalFormat("###,###,###").format(clist.getValue().getProduct().getPrice()) %></li>
+											<li class="price"><%=new DecimalFormat("###,###,###").format(clist.getValue().getProduct().getPrice())%></li>
 										</ul>
 									</td>
 									<td class="cart_quantity text-center">
@@ -118,17 +122,19 @@
 										</div>
 									</td>
 									<td class="cart-delete text-center"><span> <a
-											href="ServletCart?command=remove&id_product=<%=clist.getValue().getProduct().getId_product() %>" class="cart_quantity_delete" title="Delete"><i
+											href="ServletCart?command=remove&id_product=<%=clist.getValue().getProduct().getId_product()%>"
+											class="cart_quantity_delete" title="Delete"><i
 												class="fa fa-trash-o"></i></a>
 									</span></td>
-									<td class="cart-total"><span class="price"> <%=new DecimalFormat("###,###,###").format(clist.getValue().getProduct().getPrice()*clist.getValue().getQuantity()) %></span></td>
+									<td class="cart-total"><span class="price"> <%=new DecimalFormat("###,###,###")
+						.format(clist.getValue().getProduct().getPrice() * clist.getValue().getQuantity())%></span></td>
 								</tr>
 								<%
-									} 
-								%> 
+									}
+								%>
 								<!-- SINGLE CART_ITEM END -->
 								<!-- SINGLE CART_ITEM START -->
-								
+
 							</tbody>
 							<!-- TABLE BODY END -->
 							<!-- TABLE FOOTER START -->
@@ -136,7 +142,8 @@
 								<tr class="cart-total-price">
 									<td class="cart_voucher" colspan="3" rowspan="4"></td>
 									<td class="text-right" colspan="3">Tổng sản phẩm</td>
-									<td id="total_product" class="price" colspan="1"> <%=cart.countQuantity() %> </td>
+									<td id="total_product" class="price" colspan="1"><%=cart.countQuantity()%>
+									</td>
 								</tr>
 								<tr>
 									<td class="text-right" colspan="3">Phí giao hàng</td>
@@ -161,8 +168,8 @@
 					</div>
 					<!-- CART TABLE_BLOCK END -->
 				</div>
-				<% 
-					if(username!=null){
+				<%
+					if (username != null) {
 				%>
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 					<!-- RETURNE-CONTINUE-SHOP START -->
@@ -174,7 +181,9 @@
 					</div>
 					<!-- RETURNE-CONTINUE-SHOP END -->
 				</div>
-				<%}else{%>
+				<%
+					} else {
+				%>
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 					<!-- RETURNE-CONTINUE-SHOP START -->
 					<div class="returne-continue-shop">
@@ -185,7 +194,9 @@
 					</div>
 					<!-- RETURNE-CONTINUE-SHOP END -->
 				</div>
-				<%}%>
+				<%
+					}
+				%>
 			</div>
 		</div>
 	</section>

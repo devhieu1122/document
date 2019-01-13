@@ -15,30 +15,21 @@
 	ProductDAO productDAO = new ProductDAO();
 	ProducerDAO _producer = new ProducerDAO();
 	CategoryDAO catDAO = new CategoryDAO();
-	String id_category = "";
+	/* String id_category = "";
 	if (request.getParameter("id_category") != null) {
 		id_category = request.getParameter("id_category");
-	}
+	} */
 
-	int pages = 0, start = 0, end = 0, total = 0, size =12;
+	int pages = 0, start = 0, end = 0, total = 0, size = 12;
 	if (request.getParameter("pages") != null) {
 		pages = Integer.parseInt(request.getParameter("pages"));
 	}
-	total = (int) productDAO.countByCategory(Integer.parseInt(id_category));
-	if (total <= size) {
-		start = 0;
-		end = total;
-	} else {
-		start = (pages - 1) * size;
-		end = size;
-	}
-
-	List<Product> list = productDAO.getListProductByCategory(Integer.parseInt(id_category), start, end);
+	
 %>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>HTDStore - <%=catDAO.getCategory(Integer.parseInt(id_category)).getName_category()%>
+	<title>HTDStore - <%-- <%=catDAO.getCategory(Integer.parseInt(id_category)).getName_category()%> --%>
 		chính hãng, giá rẻ
 	</title>
 	<LINK REL="SHORTCUT ICON" HREF="image/logo/logo.png">
@@ -49,7 +40,30 @@
 </head>
 
 <body>
+	<%
+		String search ="";
+		if (request.getParameter("name_search")!=null) {
+			search = request.getParameter("name_search");
+		}
+		
+		 ArrayList<Product> arr=null;
+		if(session.getAttribute("list") == null){
+			arr= (ArrayList<Product>) productDAO.searchByNameProduct(search);
+		}else{
+			arr = (ArrayList<Product>) session.getAttribute("list");
+		}
+		
+		total = arr.size();
+		if (total <= size) {
+			start = 0;
+			end = total;
+		} else {
+			start = (pages - 1) * size;
+			end = size;
+		}
 
+		List<Product> list = productDAO.getListPage(arr, 1, 8);
+	%>
 	<div class="View-all">
 		<jsp:include page="header.jsp"></jsp:include>
 		<div class="h-content">
@@ -57,8 +71,7 @@
 				<ul class="product-link">
 					<li><a href="TrangChu.jsp" title="Trang chủ">Trang chủ</a></li>
 					<li>
-						<p>
-							&nbsp;/&nbsp;<%=catDAO.getCategory(Integer.parseInt(id_category)).getName_category()%></p>
+						&nbsp;/&nbsp;search
 					</li>
 				</ul>
 			</div>
@@ -86,14 +99,14 @@
 								<form action="">
 									<label class="c-checkbox">Tất cả <input type="checkbox"
 										checked="checked"> <span class="checkmark"></span></label>
-									<%
+									<%-- <%
 										for (Producer p : _producer.getListByCategory(Integer.parseInt(id_category))) {
-									%>
-									<label class="c-checkbox"><a hre><%=p.getName_producer()%> <input
-										type="checkbox"><span class="checkmark"></span></a></label>
-									<%
+									%> --%>
+									<label class="c-checkbox"><a hre><%-- <%=p.getName_producer()%> --%>
+											<input type="checkbox"><span class="checkmark"></span></a></label>
+									<%-- <%
 										}
-									%>
+									%> --%>
 								</form>
 							</div>
 						</div>
@@ -214,16 +227,20 @@
 						</script>
 					</div>
 				</div>
+				<%
+					if(total >0){
+				%>
 				<div class="product-bottom-2">
 					<div class="tieu-chi-chon-san-pham" style="position: relative;">
-						<div class="ten-san-pham">
+						<div class="ten-san-pham" style="border-bottom: 1px solid #f3f3f3">
 							<a href="#" style="text-transform: uppercase;"
-								title="<%=catDAO.getCategory(Integer.parseInt(id_category)).getName_category()%>">
-								<%=catDAO.getCategory(Integer.parseInt(id_category)).getName_category()%></a>
-							<span>&nbsp;(<%=productDAO.countByCategory(Integer.parseInt(id_category))%>+&nbsp;sản
-								phẩm)
+								title="<%-- <%=catDAO.getCategory(Integer.parseInt(id_category)).getName_category()%> --%>">
+								Tìm kiếm</a>
+							<span>&nbsp;(<%=arr.size() %>+&nbsp;sản
+								phẩm )
 							</span>
 						</div>
+						<br>
 						<div class="chon-tieu-chi">
 							<span>Sắp xếp theo:</span> <select name="filter" id="filter">
 								<option value="price-down" selected="selected">Giá cao
@@ -252,16 +269,17 @@
 				</div> --%>
 
 					<div class="hien-thi-danh-sach-san-pham">
-						<%
-							for (Product p : list) {
+						 <%
+							for (Product p : arr) {
 						%>
 						<div class="khung-anh">
 							<a class="anh"
-								href="product.jsp?id_product=<%=p.getId_product()%>" title="<%=p.getName()%>"> <img
-								src="<%=p.getImage()%>" alt="Invalid image <%=p.getName()%>">
+								href="product.jsp?id_product=<%=p.getId_product()%>"
+								title="<%=p.getName()%>"> <img src="<%=p.getImage()%>"
+								alt="Invalid image <%=p.getName()%>">
 									<div class="box-thong-tin-san-pham">
 										<span><%=p.getName()%></span>
-										<p><%=new DecimalFormat("###.###").format(p.getPrice())%></p>
+										<p><%=new DecimalFormat("###,###,###").format(p.getPrice())%></p>
 									</div></a>
 						</div>
 
@@ -269,22 +287,44 @@
 							}
 						%>
 						<div class="clean"></div>
-						<%if(total<=0) {%>
-						<div style="padding-left: 20px;"><span>Không tìm thấy sản phẩm nào</span></div>
-						<%}else{ %>
-						<div class="trang-san-pham-tiep-theo">
-							<ul class="btn-group">
-	                            <li><a href="category.jsp?id_category=<%=Integer.parseInt(id_category)%>&pages=1"><button>Đầu</button></a></li>
-	                            <%for (int i=1; i<=(total/size)+1; i++){ %>
-	                            <li><a href="category.jsp?id_category=<%=Integer.parseInt(id_category)%>&pages=<%=i%>"><button><%=i%></button></a></li>
-	                            <%} %>
-	                            <li><a href="category.jsp?id_category=<%=Integer.parseInt(id_category)%>&pages=<%=(total/size)+1%>"><button>Cuối</button></a></li>
-                            
-                        	</ul>
+						<%
+							if (total <= 0) {
+						%>
+						<div style="padding-left: 20px;">
+							<span>Không tìm thấy sản phẩm nào</span>
 						</div>
-						<%} %>
+						<%
+							} else {
+						%> 
+						 <div class="trang-san-pham-tiep-theo">
+							<ul class="btn-group">
+								<li><a
+									href="search.jsp?pages=1"><button>Đầu</button></a></li>
+								<%
+									for (int i = 1; i <= (total / size) + 1; i++) {
+								%>
+								<li><a
+									href="search.jsp?pages=<%=i%>"><button><%=i%></button></a></li>
+								<%
+									}
+								%>
+								<li><a
+									href="search.jsp?pages=<%=(total / size) + 1%>"><button>Cuối</button></a></li>
+
+							</ul>
+						</div> 
+						<%
+							}
+						%> 
 					</div>
 				</div>
+				<%
+					}else{
+					%>
+					<div>
+					<span style="font-size:30px; margin: 0 42px;">Không tìm thấy sản phẩm nào</span>
+					</div>
+					<%} %>
 				<div class="clean"></div>
 			</div>
 			<!------START FOOTER--------->

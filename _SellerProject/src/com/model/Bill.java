@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 public class Bill {
 	long id_bill;
 	long id_user;
-	double total;
+	long total;
 	String payment;
 	String address;
 	Timestamp date;
@@ -16,7 +16,7 @@ public class Bill {
 
 	}
 
-	public Bill(long id_bill, long id_user, double total, String payment, String address, Timestamp date, String name,
+	public Bill(long id_bill, long id_user, long total, String payment, String address, Timestamp date, String name,
 			String phone) {
 		super();
 		this.id_bill = id_bill;
@@ -45,11 +45,11 @@ public class Bill {
 		this.id_user = id_user;
 	}
 
-	public double getTotal() {
+	public long getTotal() {
 		return total;
 	}
 
-	public void setTotal(double total) {
+	public void setTotal(long total) {
 		this.total = total;
 	}
 

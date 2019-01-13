@@ -14,11 +14,13 @@ import javax.servlet.http.HttpSession;
 
 import com.DAO.BillDAO;
 import com.DAO.DetailBillDAO;
+import com.DAO.UserDAO;
 import com.model.Bill;
 import com.model.BillDetail;
 import com.model.Cart;
 import com.model.Item;
 import com.model.User;
+import com.tool.SendMail;
 
 /**
  * Servlet implementation class ServletCheckout
@@ -28,38 +30,24 @@ public class ServletCheckout extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private final BillDAO billDAO = new BillDAO();
 	private final DetailBillDAO billDetailDAO = new DetailBillDAO();
-
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
+	
 	public ServletCheckout() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
+		response.setContentType("text/html; charset=utf-8");
 		String payment = request.getParameter("payment");
 		String address = request.getParameter("address");
 		HttpSession session = request.getSession();
 		Cart cart = (Cart) session.getAttribute("cart");
-		User users = (User) session.getAttribute("user");
+		User users =  new UserDAO().getUser((String) session.getAttribute("username"));
 		String name = request.getParameter("name");
 		String phone = request.getParameter("phone");
 		try {
@@ -80,12 +68,15 @@ public class ServletCheckout extends HttpServlet {
 								list.getValue().getProduct().getPrice(), list.getValue().getQuantity()));
 
 			}
+			SendMail sm = new SendMail();
+			String text="Hello, " + users.get_email()+"\nCảm ơn bạn đã mua hàng tại của hàng của chúng tôi\n- Đơn hàng của bạn:" +bill.getId_bill()+"\n- Tổng đơn hàng:"+cart.totalCart()+"\n- Địa chỉ giao hàng của bạn:" +bill.getAddress()+"\n- Số điện thoại người nhận hàng"+bill.getPhone()+"\n\n\t\t\t Chúc bạn một ngày tốt lành!";
+			sm.sendMail(users.get_email(), "HDTSHOP" + bill.getDate(),text );
 			cart = new Cart();
 			session.setAttribute("cart", cart);
 		} catch (Exception e) {
 
 		}
-		response.sendRedirect("/checkoutSuccess.jsp");
+		response.sendRedirect("./checkoutSuccess.jsp");
 
 	}
 

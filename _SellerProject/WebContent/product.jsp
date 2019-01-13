@@ -231,7 +231,7 @@
 						<!--Button-->
 						<div id="btn-order">
 							<ul class="khung-nut-dat-hang">
-								<li class="nut-mua-ngay-1-gio"><a href="ServletCart?command=plus&id_product=1">
+								<li class="nut-mua-ngay-1-gio"><a href="ServletCart?command=plus&id_product=<%=id_product%>">
 										<p>MUA NGAY</p> <span>Giao hàng trong 1 giờ hoặc nhận
 											tại shop</span>
 								</a></li>

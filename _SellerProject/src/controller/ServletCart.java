@@ -53,12 +53,13 @@ public class ServletCart extends HttpServlet {
 				cart.removeToCart(id_product);
 				break;
 			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
-			response.sendRedirect("./cart.jsp");
+			response.sendRedirect("./index.jsp");
 		}
 		session.setAttribute("cart", cart);
-		response.sendRedirect("./cart.jsp");
+		response.sendRedirect("./index.jsp");
 	}
 
 }

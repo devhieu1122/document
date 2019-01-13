@@ -1,7 +1,6 @@
 package controller;
 
 import java.io.IOException;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,13 +11,14 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.DAO.UserDAO;
+import com.model.Cart;
 import com.tool.MD5_MaHoaPass;
 
 @WebServlet("/ServletLogin")
 public class ServletLogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	UserDAO userDAO = new UserDAO();
-	// private List<Cart> cart = new ArrayList<Cart>();
+//	 private List<Cart> cart = new ArrayList<Cart>();
 
 	public ServletLogin() {
 		super();
@@ -55,8 +55,8 @@ public class ServletLogin extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 
 		// lay thong tin dang nhap
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
+		String username = request.getParameter("username").trim();
+		String password = request.getParameter("password").trim();
 
 		String err = "";
 
@@ -74,15 +74,25 @@ public class ServletLogin extends HttpServlet {
 			if (err.length() == 0) {
 				HttpSession session = request.getSession();
 				session.setAttribute("username", username);
-				// session.setAttribute("cart", cart);
-				userDAO._login(username, MD5_MaHoaPass.maHoaDuLieu(password));
-				Cookie loginCookie = new Cookie("username", username);
-				// time reset cookie
-				loginCookie.setMaxAge(30 * 60);
-				response.addCookie(loginCookie);
-				response.sendRedirect("index.jsp");
-				url = "/index.jsp";
-				System.out.println("Login success");
+//				 session.setAttribute("cart", cart);
+				if (userDAO._login(username, MD5_MaHoaPass.maHoaDuLieu(password)) == true
+						&& userDAO.getUser(username).get_role() == 2) {
+					Cookie loginCookie = new Cookie("username", username);
+					// time reset cookie
+					loginCookie.setMaxAge(1 * 60);
+					response.addCookie(loginCookie);
+					response.sendRedirect("index.jsp");
+					/*url = "/index.jsp";*/
+					System.out.println("Login success");
+				} else {
+					Cookie loginCookie = new Cookie("username", username);
+					// time reset cookie
+					loginCookie.setMaxAge(30 * 60);
+					response.addCookie(loginCookie);
+					response.sendRedirect("./admin/header.jsp");
+					/*url = "/index.jsp";*/
+					System.out.println("Login success");
+				}
 			} else {
 				url = "/login.jsp";
 				RequestDispatcher rd = getServletContext().getRequestDispatcher(url);

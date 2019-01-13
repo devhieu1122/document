@@ -24,10 +24,10 @@
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
-	<%
+	<%--<%
 			UserDAO userDAO = new UserDAO();
-			String username = null;
-			Cookie[] cookies = request.getCookies();
+	String username = null;
+			 Cookie[] cookies = request.getCookies();
 			if (cookies != null) {
 				for (Cookie cookie : cookies) {
 					if (cookie.getName().equals("username"))
@@ -36,24 +36,28 @@
 			}
 			if (username != null) {
 				User use = userDAO.getUser(username);
-			
-		%>
-		<h2><%=use.get_name()%></h2>
-		<%} %>
+				
+	
 		
-		<%ProductDAO DAO=new ProductDAO();
+		
+		<%--<%ProductDAO DAO=new ProductDAO();
 			Product p=DAO.getProduct(1);
 			Cart cart= (Cart) request.getAttribute("cart");
 			if(cart==null){
 				cart= new Cart();
 				request.setAttribute("cart", cart);
 			}
-		%>
-		<p><a href="ServletCart?command=plus&id_product=<%=p.getId_category() %>"><%=p.getId_category() %>
+		%> --%>
+		<%-- <p><a href="ServletCart?command=plus&id_product=<%=p.getId_category() %>"><%=p.getId_category() %>
 				<h2><%=p.getName()%></h2>
 		
-		</a></p>
+		</a></p> --%>
 		
+		<%
+		User user = new UserDAO().getUser((String) session.getAttribute("username"));
+		%>
 		
+		<h2><%=user.get_userId() %></h2>
+		 
 </body>
 </html>
